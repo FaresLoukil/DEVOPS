@@ -1,0 +1,23 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true  # enables routing via service name
+      routes:
+        - id: foyer-service
+          uri: lb://MYAPP  # use the Eureka service ID (uppercase by default)
+          predicates:
+            - Path=/Foyer/**  # requests starting with /foyer/
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}
+  instance:
+    prefer-ip-address: true
