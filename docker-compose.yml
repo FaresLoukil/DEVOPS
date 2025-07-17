@@ -14,7 +14,7 @@ services:
       - mysql-data:/var/lib/mysql
 
   discovery-server:
-    image: fares249/eureka-server:latest
+    image: fares249/discovery-server:latest
     container_name: discovery-server
     ports:
       - "8761:8761"
