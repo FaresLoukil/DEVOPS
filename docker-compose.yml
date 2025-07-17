@@ -26,7 +26,7 @@ services:
     depends_on:
       - discovery-server
     ports:
-      - "8080:8080"
+      - "8089:8080"
     environment:
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery-server:8761/eureka/
 
